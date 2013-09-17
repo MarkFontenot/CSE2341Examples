@@ -37,8 +37,12 @@ void Match::loadMatch(istream& in)
 		in >> tempTimeStamp;
 		in >> tempLocation;
 
+		//This converts the integer location that is stored in the input stream
+		//to a particular location that is part of the TaggedLocation enum.
+		//Check out some documentation on enums to see more about how this works.
 		TaggedLocation loc = static_cast<TaggedLocation>(tempLocation);
 
+		//The location dictates the type of objects that is created and put in the container
 		if(loc == SHOULDER)
 			tags.push_back(new ShoulderTag(tempTagger, tempTagged, tempTimeStamp, loc));
 		else if (loc == BACK)

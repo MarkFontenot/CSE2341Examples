@@ -8,6 +8,7 @@
 #ifndef TAGGEDLOCATIONS_H_
 #define TAGGEDLOCATIONS_H_
 
+//enums eliminate the need for "magic numbers"
 enum TaggedLocation{UNINITIALIZED, BACK, CHEST, SHOULDER, LASERGUN};
 
 

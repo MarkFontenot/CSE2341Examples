@@ -6,6 +6,15 @@
  */
 
 
+/**
+ * This project is related to Project 1 from Fall 2013 - Laser Tag.
+ * It is not a complete implementation based on the assignment handout.
+ *
+ *
+ */
+
+
+
 #include "Player.h"
 #include "Team.h"
 #include "Match.h"
@@ -82,7 +91,6 @@ int main ()
 	cout << "---------------------------------------" << endl;
 	m.outputLowVerbosity(cout, t1, t2);
 	cout << "---------------------------------------" << endl;
-
 
 	return 0;
 }

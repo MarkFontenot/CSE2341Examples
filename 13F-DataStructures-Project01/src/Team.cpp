@@ -53,6 +53,7 @@ string Team::getPlayerNameById(int id) const
 		if (it->getPlayerId() == id)
 			return it->getName();
 	}
+	//TODO would be better probably to throw a PlayerNotFound Exception
 	return string("not found");
 }
 

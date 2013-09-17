@@ -7,6 +7,13 @@
 
 #include "TaggedLocations.h"
 
+/**
+ * Tag represents the event when one player
+ * tags another player at a particular time
+ * on a particular location.  A set of tags will be used
+ * to compose a match.
+ */
+
 #ifndef TAG_H_
 #define TAG_H_
 
@@ -19,16 +26,20 @@ public:
 
 	virtual ~Tag() {}
 
+	//setters
 	void setTagger(int);
 	void setTagged(int);
 	void setTimeStamp(int);
 	void setTaggedLocation(TaggedLocation);
 
+	//getters
 	int getTagger();
 	int getTagged();
 	int getTimeStamp();
 	TaggedLocation getTaggedLocation();
 
+	//sub classes will implement the getPoints method based on
+	//the location.  Here is is pure virtual.
 	virtual int getPoints() = 0;
 
 private:
@@ -39,6 +50,7 @@ private:
 
 };
 
+//Represents a particular tag to the shoulder
 class ShoulderTag : public Tag
 {
 public:
@@ -51,6 +63,7 @@ public:
 	}
 };
 
+//Represents a particular tag to the LaserGun
 class LaserGunTag : public Tag
 {
 public:
@@ -64,6 +77,7 @@ public:
 	}
 };
 
+//Represents a particular tag to the Back
 class BackTag : public Tag
 {
 public:
@@ -77,6 +91,7 @@ public:
 	}
 };
 
+//Represents a particular tag to the Chest
 class ChestTag : public Tag
 {
 public:
@@ -88,8 +103,5 @@ public:
 		return 8;
 	}
 };
-
-
-
 
 #endif /* TAG_H_ */
